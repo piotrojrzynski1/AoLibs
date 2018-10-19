@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using AoLibs.HttpHelper;
 using Autofac;
 
 namespace AoLibs.Sample.Shared.Statics
@@ -16,6 +17,8 @@ namespace AoLibs.Sample.Shared.Statics
             builder.RegisterViewModels();
             adaptersRegistration(builder);
             Container = builder.Build();
+
+            HttpHelperConfiguration.Setup(20);
         }    
     }
 }

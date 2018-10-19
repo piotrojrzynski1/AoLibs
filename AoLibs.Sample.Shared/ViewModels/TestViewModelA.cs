@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using AoLibs.Adapters.Core.Interfaces;
 using AoLibs.Navigation.Core.Interfaces;
@@ -17,6 +18,7 @@ namespace AoLibs.Sample.Shared.ViewModels
     public class TestViewModelA : ViewModelBase
     {
         private readonly List<ISomeFancyProvider> _fancyProviders;
+        private readonly IFancyPostsProvider _fancyPostsProvider;
         private readonly IMessageBoxProvider _messageBoxProvider;
         private readonly IPickerAdapter _pickerAdapter;
         private readonly INavigationManager<PageIndex> _navigationManager;
@@ -25,12 +27,14 @@ namespace AoLibs.Sample.Shared.ViewModels
 
         public TestViewModelA(
             IEnumerable<ISomeFancyProvider> fancyProviders,
+            IFancyPostsProvider fancyPostsProvider,
             IMessageBoxProvider messageBoxProvider,
             IPickerAdapter pickerAdapter,
             INavigationManager<PageIndex> navigationManager,
             AppVariables appVariables)
         {
             _fancyProviders = fancyProviders.ToList();
+            _fancyPostsProvider = fancyPostsProvider;
             _messageBoxProvider = messageBoxProvider;
             _pickerAdapter = pickerAdapter;
             _navigationManager = navigationManager;
@@ -46,9 +50,11 @@ namespace AoLibs.Sample.Shared.ViewModels
                 }, () => UserResponse != null);
         }
 
-        public void NavigatedTo()
+        public async Task NavigatedTo()
         {
             UserResponse = _appVariables.UserResponse.Value;
+            var post = await _fancyPostsProvider.GetCommentedPost();
+            await _messageBoxProvider.ShowMessageBoxOkAsync("Post:", $"{post.Title}\r\n{post.Body}\r\n{post.Comment}", "Ok");
         }
 
         public UserResponse UserResponse

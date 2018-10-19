@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Class1.cs" />
+    <Compile Remove="ApiResponseHandlers\ViombaDSAPIResponseHandler.cs" />
+    <Compile Remove="ApiDefinitionContainer.cs" />
+    <Compile Remove="AuthorizationStatusProvider.cs" />
+    <Compile Remove="HttpClientMessageHandlerFactory.cs" />
+    <Compile Remove="Statics\ResourceLocator.cs" />
+    <Compile Remove="ApiConnectionExceptionNotifier.cs" />
+    <Compile Remove="Interfaces\IAuthorizationStatusProvider.cs" />
+    <Compile Remove="Interfaces\IAuthorizationProvider.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Statics\" />
+    <Folder Include="ContentSerialization\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+</Project>
