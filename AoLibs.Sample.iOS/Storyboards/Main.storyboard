@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="233">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
@@ -17,24 +17,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="247">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="247" misplaced="YES">
                                 <rect key="frame" x="20" y="36" width="374" height="120"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="246">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="0.0"/>
                                         <state key="normal" title="Choose something fancy"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="255">
-                                        <rect key="frame" x="0.0" y="30" width="374" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="30"/>
                                         <state key="normal" title="Show what I fancy"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="10846" translatesAutoresizingMaskIntoConstraints="NO">
-                                        <rect key="frame" x="0.0" y="60" width="374" height="30"/>
+                                        <rect key="frame" x="0.0" y="30" width="374" height="30"/>
                                         <state key="normal" title="Reset Fanciness"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="256">
-                                        <rect key="frame" x="0.0" y="90" width="374" height="30"/>
+                                        <rect key="frame" x="0.0" y="60" width="374" height="30"/>
                                         <state key="normal" title="Navigate B"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="11114">
+                                        <rect key="frame" x="0.0" y="90" width="374" height="30"/>
+                                        <state key="normal" title="Navigate List"/>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -53,6 +57,7 @@
                         <outlet property="NavigateButton" destination="256" id="name-outlet-256"/>
                         <outlet property="ShowFancyButton" destination="255" id="name-outlet-255"/>
                         <outlet property="ResetButton" destination="10846" id="name-outlet-10846"/>
+                        <outlet property="NavigateListButton" destination="11114" id="name-outlet-11114"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -124,7 +129,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="244" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="16" y="476"/>
+            <point key="canvasLocation" x="20" y="448"/>
         </scene>
         <scene sceneID="4192">
             <objects>
@@ -169,6 +174,89 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4195" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-715" y="963"/>
+        </scene>
+        <scene sceneID="11109">
+            <objects>
+                <viewController id="11110" sceneMemberID="viewController" customClass="TableViewPageViewController" storyboardIdentifier="TableViewPageViewController" useStoryboardIdentifierAsRestorationIdentifier="YES">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="11107"/>
+                        <viewControllerLayoutGuide type="bottom" id="11108"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="11111">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="11378" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="0.0" y="20" width="414" height="666"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="11379">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="11379" id="11380">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <view contentMode="scaleToFill" id="11422" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="0.0" y="686" width="414" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" id="11473" translatesAutoresizingMaskIntoConstraints="NO" distribution="fillEqually">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="11522" translatesAutoresizingMaskIntoConstraints="NO">
+                                                <rect key="frame" x="0.0" y="0.0" width="103.5" height="50"/>
+                                                <state key="normal" title="Add 1"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="11524" translatesAutoresizingMaskIntoConstraints="NO">
+                                                <rect key="frame" x="103.5" y="0.0" width="103.5" height="50"/>
+                                                <state key="normal" title="Remove 1"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="11525" translatesAutoresizingMaskIntoConstraints="NO">
+                                                <rect key="frame" x="207" y="0.0" width="103.5" height="50"/>
+                                                <state key="normal" title="Add X"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="11523" translatesAutoresizingMaskIntoConstraints="NO">
+                                                <rect key="frame" x="310.5" y="0.0" width="103.5" height="50"/>
+                                                <state key="normal" title="Remove X"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint id="11427" firstAttribute="height" constant="50"/>
+                                    <constraint id="11474" firstItem="11473" firstAttribute="top" secondItem="11422" secondAttribute="top"/>
+                                    <constraint id="11475" firstItem="11473" firstAttribute="leading" secondItem="11422" secondAttribute="leading"/>
+                                    <constraint id="11476" firstAttribute="bottom" secondItem="11473" secondAttribute="bottom"/>
+                                    <constraint id="11477" firstAttribute="trailing" secondItem="11473" secondAttribute="trailing"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint id="11381" firstItem="11378" firstAttribute="top" secondItem="11107" secondAttribute="bottom"/>
+                            <constraint id="11383" firstItem="11378" firstAttribute="leading" secondItem="11111" secondAttribute="leading"/>
+                            <constraint id="11384" firstAttribute="trailing" secondItem="11378" secondAttribute="trailing"/>
+                            <constraint id="11423" firstItem="11422" firstAttribute="bottom" secondItem="11108" secondAttribute="top"/>
+                            <constraint id="11424" firstItem="11378" firstAttribute="bottom" secondItem="11422" secondAttribute="top"/>
+                            <constraint id="11425" firstItem="11422" firstAttribute="leading" secondItem="11111" secondAttribute="leading"/>
+                            <constraint id="11426" firstAttribute="trailing" secondItem="11422" secondAttribute="trailing"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="TableView" destination="11378" id="name-outlet-11378"/>
+                        <outlet property="AddSingleButton" destination="11522" id="name-outlet-11522"/>
+                        <outlet property="RemoveSingleButton" destination="11524" id="name-outlet-11524"/>
+                        <outlet property="AddManyButton" destination="11525" id="name-outlet-11525"/>
+                        <outlet property="RemoveManyButton" destination="11523" id="name-outlet-11523"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="11112" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="23" y="1228"/>
         </scene>
     </scenes>
 </document>

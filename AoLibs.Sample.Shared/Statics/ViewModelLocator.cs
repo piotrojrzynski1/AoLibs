@@ -17,6 +17,7 @@ namespace AoLibs.Sample.Shared.Statics
             builder.RegisterType<TestViewModelA>().SingleInstance();
             builder.RegisterType<TestViewModelB>().SingleInstance();
             builder.RegisterType<TestViewModelC>().SingleInstance();
+            builder.RegisterType<TableViewPageViewModel>().SingleInstance();
 
             builder.RegisterType<MainViewModel>().SingleInstance();
         }

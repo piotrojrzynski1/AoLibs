@@ -1,4 +1,4 @@
-﻿// WARNING
+// WARNING
 //
 // This file has been generated automatically by Visual Studio from the outlets and
 // actions declared in your storyboard file.
@@ -23,6 +23,10 @@ namespace AoLibs.Sample.iOS.ViewControllers
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton NavigateListButton { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton ResetButton { get; set; }
 
         [Outlet]
@@ -39,6 +43,11 @@ namespace AoLibs.Sample.iOS.ViewControllers
             if (NavigateButton != null) {
                 NavigateButton.Dispose ();
                 NavigateButton = null;
+            }
+
+            if (NavigateListButton != null) {
+                NavigateListButton.Dispose ();
+                NavigateListButton = null;
             }
 
             if (ResetButton != null) {

@@ -162,6 +162,10 @@
     <Compile Include="ViewControllers\TestPageBViewController.designer.cs">
       <DependentUpon>TestPageBViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewControllers\TableViewPageViewController.cs" />
+    <Compile Include="ViewControllers\TableViewPageViewController.designer.cs">
+      <DependentUpon>TableViewPageViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AoLibs.Adapters.Core\AoLibs.Adapters.Core.csproj">

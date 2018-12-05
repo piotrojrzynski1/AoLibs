@@ -45,6 +45,7 @@
     <Compile Include="Extensions\ClickCommandExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StyleCopSuppressions.cs" />
+    <Compile Include="Extensions\ObservableCollectionTableViewSourceFlat.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

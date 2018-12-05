@@ -40,6 +40,7 @@ namespace AoLibs.Sample.iOS.ViewControllers
             ShowFancyButton.SetOnClickCommand(ViewModel.ShowLastFanciedThingCommand);
             ResetButton.SetOnClickCommand(ViewModel.ResetFanciness);
             NavigateButton.SetOnClickCommand(ViewModel.NavigateSomewhereElseCommand);
+            NavigateListButton.SetOnClickCommand(ViewModel.NavigateTableViewCommand);
         }
     }
 }

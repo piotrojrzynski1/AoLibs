@@ -93,5 +93,9 @@ namespace AoLibs.Sample.Shared.ViewModels
             new RelayCommand(() => _navigationManager.Navigate(
                 PageIndex.PageB,
                 new PageBNavArgs {Message = "Hello from A!"}));
+
+        public RelayCommand NavigateTableViewCommand =>
+            new RelayCommand(() => _navigationManager.Navigate(
+            PageIndex.TableView));
     }
 }
