@@ -11,8 +11,8 @@ using UIKit;
 
 namespace AoLibs.Sample.iOS
 {
-    [Register ("TableViewPageViewController")]
-    partial class TableViewPageViewController
+    [Register ("TestTableViewViewController")]
+    partial class TestTableViewViewController
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]

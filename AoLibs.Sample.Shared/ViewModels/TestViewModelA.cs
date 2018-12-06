@@ -96,6 +96,6 @@ namespace AoLibs.Sample.Shared.ViewModels
 
         public RelayCommand NavigateTableViewCommand =>
             new RelayCommand(() => _navigationManager.Navigate(
-            PageIndex.TableView));
+            PageIndex.PageTestTableView));
     }
 }

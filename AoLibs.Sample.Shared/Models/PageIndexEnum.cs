@@ -5,6 +5,6 @@
         PageA,
         PageB,
         PageC,
-        TableView,
+        PageTestTableView,
     }
 }

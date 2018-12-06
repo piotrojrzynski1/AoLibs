@@ -10,9 +10,9 @@ namespace AoLibs.Utilities.iOS.Extensions
 {
     public class ObservableCollectionTableViewSourceFlat<TModel> : UITableViewSource
     {
-        UITableView _tableView;
-        ObservableCollection<TModel> _collection;
-        ObservableCollection<TModel> _previousCollection;
+        private UITableView _tableView;
+        private ObservableCollection<TModel> _collection;
+        private ObservableCollection<TModel> _previousCollection;
 
         public ObservableCollectionTableViewSourceFlat(ObservableCollection<TModel> collection)
         {
@@ -70,13 +70,17 @@ namespace AoLibs.Utilities.iOS.Extensions
             {
                 _tableView.DeleteRows(oldChanges, UITableViewRowAnimation.Automatic);
             }
-            else
+            else if(_collection.Count==0)
             {
                 var allIndexes = new List<NSIndexPath>();
                 for (int i = 0; i < _previousCollection.Count; i++)
                     allIndexes.Add(NSIndexPath.FromRowSection(i, 0));
 
                 _tableView.DeleteRows(allIndexes.ToArray(), UITableViewRowAnimation.Automatic);
+            }
+            else
+            {
+
             }
 
             _tableView.EndUpdates();

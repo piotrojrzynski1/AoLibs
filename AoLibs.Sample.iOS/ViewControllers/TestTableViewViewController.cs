@@ -11,18 +11,18 @@ using UIKit;
 
 namespace AoLibs.Sample.iOS
 {
-    [NavigationPage((int)PageIndex.TableView, NavigationPageAttribute.PageProvider.Cached, StoryboardName = "Main",
-        ViewControllerIdentifier = "TableViewPageViewController")]
-    public partial class TableViewPageViewController : ViewControllerBase<TableViewPageViewModel>
+    [NavigationPage((int)PageIndex.PageTestTableView, NavigationPageAttribute.PageProvider.Cached, StoryboardName = "Main",
+        ViewControllerIdentifier = "TestTableViewViewController")]
+    public partial class TestTableViewViewController : ViewControllerBase<TestTableViewViewModel>
     {
-        public TableViewPageViewController (IntPtr handle) : base (handle)
+        public TestTableViewViewController(IntPtr handle) : base (handle)
         {
         }
 
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            TableView.Source = new TableViewPageTableViewSource(ViewModel.UserResponses);
+            TableView.Source = new TestTableViewTableViewSource(ViewModel.UserResponses);
         }
 
         public override void InitBindings()
@@ -34,16 +34,16 @@ namespace AoLibs.Sample.iOS
         }
     }
 
-    public class TableViewPageTableViewSource : ObservableCollectionTableViewSourceFlat<UserResponse>
+    public class TestTableViewTableViewSource : ObservableCollectionTableViewSourceFlat<UserResponse>
     {
-        public TableViewPageTableViewSource(ObservableCollection<UserResponse> collection) : base(collection)
+        public TestTableViewTableViewSource(ObservableCollection<UserResponse> collection) : base(collection)
         {
         }
 
         public override UITableViewCell GetCellForModel(UserResponse model)
         {
             var cell = new UITableViewCell();
-            cell.TextLabel.Text = model.FancyThing + " - " + model.DateTime;
+            cell.TextLabel.Text = $"{model.FancyThing} - {model.DateTime}";
             return cell;
         }
     }

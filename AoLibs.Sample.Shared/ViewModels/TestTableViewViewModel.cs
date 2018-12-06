@@ -12,14 +12,14 @@ using GalaSoft.MvvmLight.Command;
 
 namespace AoLibs.Sample.Shared.ViewModels
 {
-    public class TableViewPageViewModel : ViewModelBase
+    public class TestTableViewViewModel : ViewModelBase
     {
         private readonly INavigationManager<PageIndex> _navigationManager;
         private readonly Random _random = new Random();
 
-        private SmartObservableCollection<UserResponse> _userResponses = new SmartObservableCollection<UserResponse>();
+        private readonly SmartObservableCollection<UserResponse> _userResponses = new SmartObservableCollection<UserResponse>();
 
-        public TableViewPageViewModel(INavigationManager<PageIndex> navigationManager)
+        public TestTableViewViewModel(INavigationManager<PageIndex> navigationManager)
         {
             _navigationManager = navigationManager;
         }
@@ -33,7 +33,7 @@ namespace AoLibs.Sample.Shared.ViewModels
 
         public RelayCommand RemoveSingleCommand => new RelayCommand(() =>
         {
-            if(_userResponses.Count!=0)
+            if(_userResponses.Count != 0)
                 _userResponses.RemoveAt(0);
         });
 

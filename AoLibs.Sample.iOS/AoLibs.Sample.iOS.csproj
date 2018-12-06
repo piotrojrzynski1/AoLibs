@@ -162,9 +162,9 @@
     <Compile Include="ViewControllers\TestPageBViewController.designer.cs">
       <DependentUpon>TestPageBViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="ViewControllers\TableViewPageViewController.cs" />
-    <Compile Include="ViewControllers\TableViewPageViewController.designer.cs">
-      <DependentUpon>TableViewPageViewController.cs</DependentUpon>
+    <Compile Include="ViewControllers\TestTableViewViewController.cs" />
+    <Compile Include="ViewControllers\TestTableViewViewController.designer.cs">
+      <DependentUpon>TestTableViewViewController.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
